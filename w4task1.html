@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <header> 
+		<h1>Ajla Salčinović</h1> 
+	</header>
+
+    <img src="https://www.prestigeflowers.co.uk/images/products/eb2627f6a89020c313c8eb696b0ac8d5.jpg" alt="Picture od flowers" width="200" height="300">
+
+    <nav> 
+        <ul> 
+            <li><a href="#about">About Me</a></li> 
+            <li><a href="#experience">Experience</a></li> 
+    <li><a href="#skills">Skills</a></li> 
+    </ul> 
+    </nav>
+    
+    <hr>
+
+    <article>
+        <h2>Introduction</h2>
+        <p>Hello! My name is Ajla and I am an experienced web developer with a passion for creating dynamic web applications.</p>
+    </article>
+    <hr>
+
+    <h2>Your location</h2>
+
+    <button onclick="getLocation()">Get My Location</button>
+    <p id="location"></p>
+    
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById("location").innerText = "Geolocation is not supported by this browser.";
+            }
+        }
+    
+        function showPosition(position) {
+            document.getElementById("location").innerText = 
+                `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+        }
+    
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById("location").innerText = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById("location").innerText = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById("location").innerText = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById("location").innerText = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+    <p>Click the button to get your location</p>
+
+    <hr>
+
+    <h2>Personal projects</h2>
+    <p>I am a first year student at International Burch University. I have finished <strong>"Treća gimnazija"</strong> in Sarajevo. I intend to become full-stack developr in the future and be successful at programming.</p>
+    <p>I have a strong beckground in frontend development, working with technologies like HTM, CSS, C++ etc.</p>
+    <hr>
+
+
+    <footer> 
+        <p>Contact: salcinovicajla05@gmail.com</p>
+         <p>(c) 2024 Ajla Salčinović</p>
+    </footer>
+    
+
+</head>
+<body>
+    
+</body>
+</html>
